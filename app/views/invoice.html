@@ -1,0 +1,29 @@
+<div ng-controller="InvoiceCtrl as invoice">
+  <form>
+    <fieldset class="form-group">
+      <label for="qtyInput">Quantity</label>
+      <input type="text" ng-model="invoice.qty" class="form-control" id="qtyInput" placeholder="Enter Quantity"
+             required>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="costInput">Cost</label>
+      <input type="text" ng-model="invoice.cost" class="form-control" id="costInput" placeholder="Enter Cost" required>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="currInput">Currency</label>
+      <select id="currInput" class="form-control" ng-model="invoice.inCurr">
+        <option ng-repeat="c in invoice.currencies">{{c}}</option>
+      </select>
+    </fieldset>
+  </form>
+  <div>
+    <b>Total:</b>
+    <ul>
+    <li ng-repeat="c in invoice.currencies">
+      {{invoice.total(c) | currency:c + " : "}}
+    </li>
+    </ul>
+    <button class="btn btn-success" ng-click="invoice.pay()">Pay</button>
+  </div>
+  <br>
+</div>

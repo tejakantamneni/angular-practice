@@ -29,9 +29,9 @@ angular
       })
 */
       .when('/', {
-        templateUrl: 'views/hello.html',
-        controller: 'HelloCtrl',
-        controllerAs: 'hello'
+        templateUrl: 'views/invoice.html',
+        controller: 'InvoiceCtrl',
+        controllerAs: 'invoice'
       })
       .when('/hello', {
         templateUrl: 'views/hello.html',
@@ -42,6 +42,11 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/invoice', {
+        templateUrl: 'views/invoice.html',
+        controller: 'InvoiceCtrl',
+        controllerAs: 'invoice'
       })
       .otherwise({
         redirectTo: '/'
