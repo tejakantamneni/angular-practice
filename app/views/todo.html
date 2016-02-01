@@ -1,0 +1,36 @@
+<div ng-controller="TodoCtrl as todoManager">
+  <div class="jumbotron">
+    <h1>TODO Manager</h1>
+    <p class="lead">
+      TODO manager tracks all your pending items and helps you prioritize to get them done.
+    </p>
+    <p><a class="btn btn-lg btn-success" ng-click="todoManager.startNewTodo()" role="button">
+      <span class="glyphicon glyphicon-plus"></span> Add a new TODO item</a></p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <fieldset class="form-group">
+          <input type="text" ng-model="todoManager.newTodo" class="form-control" id="todoInput" placeholder="Enter your todo description">
+        </fieldset>
+      </form>
+
+      <div class="todolist">
+        <ul id="sortable" class="list-unstyled">
+          <li  class="ui-state-default" ng-repeat="todo in todoManager.todoList">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="" />{{todo.text}}</label>
+            </div>
+          </li>
+        </ul>
+        <div class="todo-footer">
+          <strong><span class="count-todos"></span>{{todoManager.todoList.length}}</strong> Items Left
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+

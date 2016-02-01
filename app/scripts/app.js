@@ -21,17 +21,10 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-/*
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-*/
-      .when('/', {
-        templateUrl: 'views/invoice.html',
-        controller: 'InvoiceCtrl',
-        controllerAs: 'invoice'
+        templateUrl: 'views/todo.html',
+        controller: 'TodoCtrl',
+        controllerAs: 'todo'
       })
       .when('/hello', {
         templateUrl: 'views/hello.html',
@@ -47,6 +40,11 @@ angular
         templateUrl: 'views/invoice.html',
         controller: 'InvoiceCtrl',
         controllerAs: 'invoice'
+      })
+      .when('/todo', {
+        templateUrl: 'views/todo.html',
+        controller: 'TodoCtrl',
+        controllerAs: 'todo'
       })
       .otherwise({
         redirectTo: '/'
