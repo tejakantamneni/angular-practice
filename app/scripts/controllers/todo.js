@@ -19,4 +19,9 @@ angular.module('angularHelloApp')
       this.newTodo = "";
       $('#todoInput').focus();
     };
+    this.addTodo = function addTodo(){
+      var todoText = this.newTodo;
+      this.todoList.push({text: todoText, complete: false, createdOn: new Date()});
+      this.startNewTodo();
+    };
   });

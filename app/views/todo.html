@@ -10,9 +10,10 @@
 
   <div class="row">
     <div class="col-md-12">
-      <form>
+      <form ng-submit="todoManager.addTodo()">
         <fieldset class="form-group">
-          <input type="text" ng-model="todoManager.newTodo" class="form-control" id="todoInput" placeholder="Enter your todo description">
+          <input type="text" ng-model="todoManager.newTodo"
+                 class="form-control" id="todoInput" placeholder="Enter your todo description">
         </fieldset>
       </form>
 
